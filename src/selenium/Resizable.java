@@ -32,7 +32,7 @@ public class Resizable {
 	  System.out.println(x + " " +y);
 	  
 	  
-	  a.clickAndHold(resize).moveByOffset(250, 300).build().perform();
+	  a.clickAndHold(resize).moveByOffset(250, 300).perform();
 	  
 	  
 	  
