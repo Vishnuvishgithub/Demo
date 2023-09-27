@@ -42,7 +42,7 @@ public class ResizeDemo1 {
 	  a.dragAndDropBy(Resize, 300, 100).perform();
 	  
 	
-	//driver.close();
+	driver.close();
 	}
 
 }
