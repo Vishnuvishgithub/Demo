@@ -11,7 +11,7 @@ public class WindowHandlingExample {
  
 	      public static void main(String[] args) throws InterruptedException {
 	        
-	          WebDriver driver = new ChromeDriver();
+	    	  WebDriver driver = new ChromeDriver();
 	          driver.manage().window().maximize();
 	          driver.get("https://demoqa.com/browser-windows");
 
