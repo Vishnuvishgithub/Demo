@@ -37,14 +37,7 @@ public class Radiobutton {
 		int size=total.size();
 		System.out.println(size);
 		
-		
-		
-		
-		
-		
-		
-		
-		driver.close();
+	  driver.close();
 		
 
 	}

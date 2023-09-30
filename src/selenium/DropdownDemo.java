@@ -14,7 +14,7 @@ public class DropdownDemo {
 	//selectbyvisibletext
 	//selectbyvalue
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		
 		   WebDriver driver = new ChromeDriver();
@@ -28,11 +28,12 @@ public class DropdownDemo {
 	  
 	Select dropdown=new Select(driver.findElement(By.id("country")));
 	
-	//dropdown.selectByIndex(1);
+	dropdown.selectByIndex(1);
 	
 	//dropdown.selectByVisibleText("Australia");
 	
-	dropdown.selectByValue("brazil");
+  //dropdown.selectByValue("brazil");
+	
 	
 	
 	// 2. To find the the total  number of options options in dropdown
