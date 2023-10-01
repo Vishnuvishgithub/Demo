@@ -387,13 +387,11 @@ public class TestAutomationWebsite {
 	  		confirmbox.click();
 	  		
            Alert but= driver.switchTo().alert();
-	  		
 	  		System.out.println(but.getText());  // print the text inside the box
 	  		Thread.sleep(1000);
 	  		but.dismiss();
 	  		
 	  		 prompt=driver.findElement(By.xpath(" //*[@id=\"HTML9\"]/div[1]/button[3]"));
-	  		
 	  		prompt.click();
 	  		
 	  		Alert pr= driver.switchTo().alert();
