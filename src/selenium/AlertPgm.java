@@ -40,7 +40,6 @@ public class AlertPgm {
 		but.dismiss();
 		
 		
-
 		WebElement prompt=driver.findElement(By.xpath(" //*[@id=\"HTML9\"]/div[1]/button[3]"));
 		
 		prompt.click();
@@ -49,8 +48,6 @@ public class AlertPgm {
 		
 		System.out.println(pr.getText());
 
-
-		
 		
 		pr.sendKeys("VISHNU") ;
 		
