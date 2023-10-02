@@ -28,7 +28,7 @@ public class AddToCart {
     // Using windowhandles 
 		
 		Set <String> S=driver.getWindowHandles();
-		ArrayList ar= new ArrayList(S);
+		ArrayList<String> ar= new ArrayList(S);
 		
 		System.out.println(ar.get(0));
 		System.out.println(ar.get(1));

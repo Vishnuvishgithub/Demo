@@ -7,9 +7,11 @@ import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -350,7 +352,7 @@ public class TestAutomationWebsite {
 	      String txtcolor=errormessage.getCssValue("color");
 	      System.out.println("Text mesasge color is :" + txtcolor);
 	   
-	   // NEW BROWSER WINDOW 
+	/*   // NEW BROWSER WINDOW 
 	      
 	      WebElement nbwindow;
 	   
@@ -364,13 +366,14 @@ public class TestAutomationWebsite {
 	   //To switch to the main window
 	   
 	  driver.switchTo().window(currentURL);
+	 
 	
 	       //To Find out the Number of Opened Windows
 
 	        Set<String> allWindowHandles = driver.getWindowHandles();
 	         ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
 	          System.out.println("No. of tabs opened : " + tabs.size());
-
+    */
        // ALERT BOXES
 	  
 	          WebElement alert,confirmbox,prompt;
@@ -400,24 +403,66 @@ public class TestAutomationWebsite {
 	  		Thread.sleep(2000);
 	  	 	pr.accept();
 	  		
+	  	 	//Double click
+	  	 	
+	  	 	WebElement doubleclick;
+	  	 	doubleclick=driver.findElement(By.xpath("//*[@id=\"HTML10\"]/h2"));
+	  	 	
+	  	 	Actions c=new Actions(driver);
+	  	 	c.doubleClick().build().perform();
+	  	 	Thread.sleep(2000);
+	  	 	
+	  	 	
+	  	 	
 	  		
-	  
+	  // DRAG AND DROP
+	  	 	
+	  	 	WebElement drag , drop;
+	  	 	
+	  	 	drag=driver.findElement(By.id("draggable"));
+	  	 	drop=driver.findElement(By.id("droppable"));
+	  	 	
+	  	 	Actions a= new Actions(driver);
+	  	 	a.dragAndDrop(drag, drop).build().perform();
+	          Thread.sleep(1000);
+	          
+	          //SLIDER
+	          
+	       WebElement slider;
+	       
+	       slider=driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
+	       
+	       Actions s= new Actions(driver);
+	       s.dragAndDropBy(slider, 100, 125).perform();
+	          
+	          //copy from one field to other field using keydown action method
+	       
+	       WebElement field1,field2;
+	       
+	       field1=driver.findElement(By.id("field1"));
+	          
+	          Actions k=new Actions(driver);
+	          Thread.sleep(2000);
+	       // select and copy text
+	          k.keyDown(field1, Keys.CONTROL).sendKeys("a").sendKeys("c").build().perform();
+	          
+	           field2=driver.findElement(By.id("field2"));
+	          Thread.sleep(2000);
+	           k.keyDown(field2, Keys.CONTROL).sendKeys("v").build().perform();
 	          
 	          
+	          // FRAMES 
+	           
+	           WebElement frame;
+	            frame=driver.findElement(By.xpath("//*[@id=\"FSForm\"]/div[2]"));
+	           driver.switchTo().frame(frame);
 	          
+	       WebElement name1;
+	       name1=driver.findElement(By.id("RESULT_TextField-0"));
+	       name1.sendKeys("VISHNU AUTOMATION");
 	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
-	          
+	        System.out.println(name1.getAttribute("value"));
+	        
 	          
 	          
 	          
