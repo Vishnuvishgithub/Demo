@@ -199,7 +199,7 @@ public class TestAutomationWebsite {
 	   
 	  // use webdriverwait class
 	   
-	   WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));  // to wait for 10 seconds
+	   WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));  
 	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-datepicker-calendar")));
 	   
 	   // locate the current month and current year 
@@ -273,7 +273,7 @@ public class TestAutomationWebsite {
 		  String title2=driver.getTitle();
 		  System.out.println("Title2 :" + title2);
 		  Thread.sleep(1000);
-		/*   // username password login 
+		 // username password login 
 		  WebElement username;
 		  username=driver.findElement(By.name("username"));
 		   username.sendKeys("Admin");
@@ -289,6 +289,9 @@ public class TestAutomationWebsite {
 		  WebElement login;
 		  login=driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
 		  login.click();
+		  Thread.sleep(2000);
+		  
+		  driver.navigate().back();
 		  
 		  //To find the login button colour
 		  
@@ -300,7 +303,7 @@ public class TestAutomationWebsite {
 		  String Bgcolour=loginbutton.getCssValue("Background");
 		  System.out.println("Bgcolour of Login Button is :" + Bgcolour);
 		  Thread.sleep(1000);
-		  */
+		  
 		  driver.navigate().back();
 		  
 		   //To find out the no of columns in a table , use tagname locator
@@ -413,8 +416,6 @@ public class TestAutomationWebsite {
 	  	 	Thread.sleep(2000);
 	  	 	
 	  	 	
-	  	 	
-	  		
 	  // DRAG AND DROP
 	  	 	
 	  	 	WebElement drag , drop;
@@ -456,6 +457,7 @@ public class TestAutomationWebsite {
 	           WebElement frame;
 	            frame=driver.findElement(By.xpath("//*[@id=\"FSForm\"]/div[2]"));
 	           driver.switchTo().frame(frame);
+	           
 	          
 	       WebElement name1;
 	       name1=driver.findElement(By.id("RESULT_TextField-0"));
