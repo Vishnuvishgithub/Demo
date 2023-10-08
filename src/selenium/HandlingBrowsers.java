@@ -14,14 +14,14 @@ public class HandlingBrowsers {
        
         driver.get("http://www.google.com"); // launch the website
         
-        Thread.sleep(3000);     // slowdown for 3 milliseconds
+        Thread.sleep(3000);     // slowdown for 3 seconds
   
         driver.manage().window().maximize();   // maximise the browser
         
-        driver.manage().window().minimize(); // minimise the browser
+        //driver.manage().window().minimize(); // minimise the browser
         
     
-        driver.manage().window().fullscreen();
+    //    driver.manage().window().fullscreen();
         Thread.sleep(3000);
         
         // To resize the current window to a particular dimension 
@@ -38,6 +38,9 @@ public class HandlingBrowsers {
         System.out.println(currentURL);
         
         
+        String pagesource= driver.getPageSource();// returns the HTML Code
+        System.out.println(pagesource);
+        
         
         driver.navigate().to("https://www.selenium.dev/"); // navigate to the another URL page
         Thread.sleep(3000);           
@@ -45,11 +48,9 @@ public class HandlingBrowsers {
         driver.navigate().back();
         Thread.sleep(5000);
     
-       driver.navigate().forward();
-       Thread.sleep(3000);
-     
-       driver.navigate().refresh();
-       Thread.sleep(3000);
+      // driver.navigate().forward();
+      
+      // driver.navigate().refresh();
        
        
        driver.close();     // close the browser
